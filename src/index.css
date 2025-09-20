@@ -8,35 +8,64 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Windows 11 Design System */
+    --background: 210 11% 15%; /* Windows dark background */
+    --foreground: 0 0% 95%; /* Light text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 11% 18%; /* Windows card background */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 11% 18%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 213 100% 50%; /* Windows blue */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 11% 25%; /* Windows secondary */
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 11% 20%; /* Windows muted */
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 213 100% 50%; /* Windows accent blue */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%; /* Windows red */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 11% 25%; /* Windows border */
+    --input: 210 11% 20%; /* Windows input background */
+    --ring: 213 100% 50%; /* Windows focus ring */
 
-    --radius: 0.5rem;
+    /* Windows-specific colors */
+    --windows-titlebar: 210 11% 13%;
+    --windows-titlebar-text: 0 0% 90%;
+    --windows-button-hover: 0 0% 100% / 0.1;
+    --windows-button-close-hover: 0 75% 55%;
+    --windows-terminal-bg: 0 0% 5%; /* Command prompt black */
+    --windows-terminal-text: 192 100% 77%; /* Command prompt green-ish text */
+    --windows-terminal-prompt: 120 100% 50%; /* Green prompt */
+    --windows-terminal-error: 0 75% 60%; /* Error red */
+    --windows-terminal-info: 213 100% 60%; /* Info blue */
+    --windows-desktop: 213 100% 20%; /* Desktop blue gradient start */
+    --windows-desktop-end: 213 100% 35%; /* Desktop blue gradient end */
+
+    /* Windows gradients */
+    --gradient-windows-desktop: linear-gradient(135deg, hsl(var(--windows-desktop)), hsl(var(--windows-desktop-end)));
+    --gradient-windows-taskbar: linear-gradient(180deg, hsl(210 11% 20%), hsl(210 11% 15%));
+    --gradient-windows-titlebar: linear-gradient(180deg, hsl(210 11% 15%), hsl(210 11% 13%));
+
+    /* Windows shadows */
+    --shadow-windows-window: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --shadow-windows-button: 0 2px 8px hsl(0 0% 0% / 0.2);
+
+    /* Windows fonts */
+    --font-windows-console: 'Consolas', 'Lucida Console', monospace;
+    
+    /* Windows animations */
+    --transition-windows-fast: all 0.1s ease;
+    
+    --radius: 0.25rem; /* Windows uses smaller radius */
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +130,10 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  .windows-console {
+    font-family: var(--font-windows-console);
   }
 }
